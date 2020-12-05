@@ -10,19 +10,216 @@
 
   <style>
     #ScottVideo {
+      bottom: 0;
+      min-height: 100%;
+      min-width: 100%;
       position: fixed;
       right: 0;
+    }
+
+    .button-container {
+      align-items: center;
+      display: flex;
+      height: 80px;
+      left: 50%;
+      justify-content: center;
+      margin-left: -100px;
+      margin-top: -40px;
+      opacity: 1;
+      position: absolute;
+      top: 50%;
+      transition: opacity 0.5s;
+      width: 200px;
+    }
+
+    .button {
+      background: #ed3330;
+      border: none;
+      border-radius: 5px;
+      color: #fff !important;
+      display: inline-block;
+      padding: 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: all 0.4s ease 0s;
+    }
+
+    .button:hover {
+      background: #434343;
+      box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+      letter-spacing: 1px;
+      transition: all 0.4s ease 0s;
+      -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    }
+
+    .content {
+      align-items: center;
+      background: rgba(0, 0, 0, 0.5);
       bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      left: 0;
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+    }
+
+    .rainbow {
+
+      /* Font options */
+      font-family: "Comic Sans MS", serif;
+      text-shadow: 2px 2px 4px #000000;
+      font-size: 40px;
+
+      /* Chrome, Safari, Opera */
+      -webkit-animation: rainbow 5s infinite;
+
+      /* Internet Explorer */
+      -ms-animation: rainbow 5s infinite;
+
+      /* Standar Syntax */
+      animation: rainbow 5s infinite;
+    }
+
+    /* Chrome, Safari, Opera */
+    @-webkit-keyframes rainbow {
+      0% {
+        color: orange;
+      }
+      10% {
+        color: purple;
+      }
+      20% {
+        color: red;
+      }
+      30% {
+        color: CadetBlue;
+      }
+      40% {
+        color: yellow;
+      }
+      50% {
+        color: coral;
+      }
+      60% {
+        color: green;
+      }
+      70% {
+        color: cyan;
+      }
+      80% {
+        color: DeepPink;
+      }
+      90% {
+        color: DodgerBlue;
+      }
+      100% {
+        color: orange;
+      }
+    }
+
+    /* Internet Explorer */
+    @-ms-keyframes rainbow {
+      0% {
+        color: orange;
+      }
+      10% {
+        color: purple;
+      }
+      20% {
+        color: red;
+      }
+      30% {
+        color: CadetBlue;
+      }
+      40% {
+        color: yellow;
+      }
+      50% {
+        color: coral;
+      }
+      60% {
+        color: green;
+      }
+      70% {
+        color: cyan;
+      }
+      80% {
+        color: DeepPink;
+      }
+      90% {
+        color: DodgerBlue;
+      }
+      100% {
+        color: orange;
+      }
+    }
+
+    /* Standar Syntax */
+    @keyframes rainbow {
+      0% {
+        color: orange;
+      }
+      10% {
+        color: purple;
+      }
+      20% {
+        color: red;
+      }
+      30% {
+        color: CadetBlue;
+      }
+      40% {
+        color: yellow;
+      }
+      50% {
+        color: coral;
+      }
+      60% {
+        color: green;
+      }
+      70% {
+        color: cyan;
+      }
+      80% {
+        color: DeepPink;
+      }
+      90% {
+        color: DodgerBlue;
+      }
+      100% {
+        color: orange;
+      }
     }
   </style>
 </head>
 
 <body>
-<video loop autoplay id="ScottVideo">
+<video loop id="ScottVideo" onclick="">
   <source src="./assets/ShowerScott.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+<div id="StartButton" class="button-container">
+  <span class="button">
+    Play me <3
+  </span>
+</div>
+<button id="StartButton" class="button">Play me</button>
+<div class="content">
+  <h1 class="rainbow">The Best Manager</h1>
+  <p class="rainbow">Thank you for being <strike>the best</strike> naked</p>
+</div>
+
+<script>
+  var button = document.getElementById("StartButton");
+  var video = document.getElementById("ScottVideo");
+  button.addEventListener("click", function (event) {
+    video.play();
+    button.style.opacity = "0";
+  });
+</script>
+
 </body>
 </html>
